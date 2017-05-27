@@ -1,10 +1,6 @@
 <?php 
-$catalog = array();
-//Tells php to add one new element to the code, using whatever index number comes next.
-$catalog[101] = "Design Patterns"; 
-$catalog[201] = "Forrest Gump";
-$catalog[301] = "Beethoven";
-$catalog[102] = "Clean Code";
+
+include("includes/data.php");
 
 $pageTitle = "Full Catalog";
 
@@ -37,10 +33,14 @@ include("includes/header.php");
     <div class="wrapper">
         <h1><?php echo $pageTitle; ?></h1>
         
-            <ul>
+            <ul class="items">
                 <?php
                     foreach($catalog as $item) {
-                        echo "<li>" . $item . "</li>";
+                        echo "<li><a href='#'><img src='" 
+                        .$item["img"] ."' alt='" 
+                        .$item["title"] ."'/>"
+                        ."<p>View details</p>"
+                        ."</a></li>";
                     }
                 ?>
             </ul>
