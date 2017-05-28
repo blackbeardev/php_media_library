@@ -36,9 +36,11 @@ include("includes/header.php");
         
             <ul class="items">
                 <?php
-                    foreach($catalog as $id => $item) {
-                        echo get_item_html($id, $item);
-                    }
+                    $categories = array_category($catalog, $section);
+					
+                    	foreach($categories as $id) {
+                        	echo get_item_html($id, $catalog[$id]);
+                    	}
                 ?>
             </ul>
         
